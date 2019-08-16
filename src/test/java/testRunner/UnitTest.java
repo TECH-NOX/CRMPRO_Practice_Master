@@ -3,14 +3,16 @@ package testRunner;
 import org.junit.Test;
 
 import base.Base;
+import pages.LoginPage;
 
 public class UnitTest {
-	
+	LoginPage loginPageObj;
+
 	@Test
 	public void testRun() throws InterruptedException {
-		Base baseObj = new Base();
+		loginPageObj = new LoginPage();
 		Base.setUp();
-		Thread.sleep(5000);
+		loginPageObj.login();
 		Base.tearDown();
 	}
 
