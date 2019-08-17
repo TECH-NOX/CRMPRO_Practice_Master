@@ -10,5 +10,9 @@ public class ReusableMethods {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
 	}
+	
+	public static void switchtoFrame(WebDriver driver, String framename) {
+		driver.switchTo().frame(framename);
+	}
 
 }
