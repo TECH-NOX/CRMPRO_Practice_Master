@@ -11,6 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utility.UtilityVariables;
 
@@ -19,6 +22,8 @@ public class Base {
 	public static WebDriver driver = null;
 	public static InputStream is = null;
 	public static Properties prop = null;
+	public static ExtentHtmlReporter htmlReporter;
+	public static ExtentReports extentReports;
 
 	public Base() {
 		try {
@@ -55,6 +60,10 @@ public class Base {
 		driver.manage().timeouts().pageLoadTimeout(UtilityVariables.PAGELOAGD_TIMEOUTS, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(UtilityVariables.IMPLICIT_WAIT_TIMEOUTS, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
+//		--------Extent Reports Generation ------		
+		htmlReporter = new ExtentHtmlReporter("Extent Reports/extentReport.html");
+		extentReports = new ExtentReports();
+		extentReports.attachReporter(htmlReporter);
 	}
 
 	public static void tearDown() {

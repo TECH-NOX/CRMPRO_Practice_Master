@@ -32,5 +32,10 @@ public class LoginPage extends Base {
 		driver.findElement(password_textInput_name).sendKeys(pWord);
 		ReusableMethods.javaScriptExecutorClick(driver, driver.findElement(login_button_xpath));
 	}
+	
+	public String getLoginPageTitle() {
+		return driver.getTitle();
+		
+	}
 
 }
