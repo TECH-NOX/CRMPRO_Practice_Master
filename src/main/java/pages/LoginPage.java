@@ -24,5 +24,13 @@ public class LoginPage extends Base {
 		driver.findElement(password_textInput_name).sendKeys(prop.getProperty("password"));
 		ReusableMethods.javaScriptExecutorClick(driver, driver.findElement(login_button_xpath));
 	}
+	
+	public void login(String uname, String pWord) {
+		driver.findElement(userName_textInput_name).clear();
+		driver.findElement(userName_textInput_name).sendKeys(uname);
+		driver.findElement(password_textInput_name).clear();
+		driver.findElement(password_textInput_name).sendKeys(pWord);
+		ReusableMethods.javaScriptExecutorClick(driver, driver.findElement(login_button_xpath));
+	}
 
 }

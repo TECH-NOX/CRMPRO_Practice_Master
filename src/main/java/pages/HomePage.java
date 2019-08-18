@@ -21,9 +21,19 @@ public class HomePage extends Base {
 	By docs_btn_xpath = By.xpath("//a[@title='Docs']");
 	By forms_btn_xpath = By.xpath("//a[@title='Forms']");
 	By reports_btn_xpath = By.xpath("//a[@title='Reports']");
+	By username_text_xpath = By.xpath("//td[@class='headertext' and contains(text(),'tech nox')]");
 
 	public void navigateToCalendarPage() {
 		ReusableMethods.switchtoFrame(driver, "mainpanel");
 		driver.findElement(calendar_btn_xpath).click();
 	}
+
+	public String getHomePageTitle() {
+		return driver.getTitle();
+	}
+	
+	public String getHomePageUserName() {
+		return driver.findElement(username_text_xpath).getText().trim();
+	}
+	
 }

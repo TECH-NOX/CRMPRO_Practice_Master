@@ -22,8 +22,7 @@ public class Base {
 
 	public Base() {
 		try {
-			is = new FileInputStream(
-					"C:\\Users\\ramizmrr\\eclipse-workspace\\CRMPRO_Practice_Master\\src\\main\\java\\configuration\\config.properties");
+			is = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/configuration/config.properties");
 			prop = new Properties();
 			prop.load(is);
 		} catch (FileNotFoundException e) {

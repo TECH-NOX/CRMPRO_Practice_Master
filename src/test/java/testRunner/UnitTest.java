@@ -1,23 +1,16 @@
 package testRunner;
 
-import org.junit.Test;
+import org.junit.runner.RunWith;
 
-import base.Base;
-import pages.HomePage;
-import pages.LoginPage;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+
+		features = "src/test/java/features", glue = { "stepDefs" }, dryRun = false, monochrome = true, plugin = {
+				"pretty", "html:target/HtmlReport" })
 
 public class UnitTest {
-	LoginPage loginPageObj;
-	HomePage homePageObj;
-
-	@Test
-	public void testRun() throws InterruptedException {
-		loginPageObj = new LoginPage();
-		Base.setUp();
-		loginPageObj.login();
-		homePageObj = new HomePage();
-		homePageObj.navigateToCalendarPage();
-		Base.tearDown();
-	}
 
 }
