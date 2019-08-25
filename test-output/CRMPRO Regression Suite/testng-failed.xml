@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Failed suite [CRMPRO Regression Suite]" guice-stage="DEVELOPMENT">
+  <test name="General Regression">
+    <classes>
+      <class name="testRunner.UnitTest"/>
+    </classes>
+  </test> <!-- General Regression -->
+</suite> <!-- Failed suite [CRMPRO Regression Suite] -->

@@ -1,11 +1,17 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import base.Base;
 import utility.ReusableMethods;
 
 public class HomePage extends Base {
+	
+	private WebDriver driver;
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+	}
 
 	By calendar_btn_xpath = By.xpath("//a[@title='Calendar']");
 	By companies_btn_xpath = By.xpath("//a[@title='Companies']");
